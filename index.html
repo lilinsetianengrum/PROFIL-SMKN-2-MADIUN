@@ -1,0 +1,511 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profil SMK Negeri 2 Madiun</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6fa;
+    color: #222;
+    line-height: 1.7;
+}
+
+header {
+    background: #102c57;
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #ffc845;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 18px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #ffc845;
+}
+
+/* BERANDA */
+.hero {
+    min-height: 550px;
+    background:
+    linear-gradient(rgba(9,31,65,.82),rgba(9,31,65,.82)),
+    url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1600");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 30px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.hero h1 span {
+    color: #ffc845;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: auto auto 25px;
+}
+
+.tombol {
+    background: #ffc845;
+    color: #102c57;
+    text-decoration: none;
+    padding: 13px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+/* BAGIAN UMUM */
+section {
+    padding: 70px 8%;
+}
+
+.judul {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.judul h2 {
+    color: #102c57;
+    font-size: 32px;
+}
+
+.garis {
+    width: 65px;
+    height: 4px;
+    background: #ffc845;
+    margin: 12px auto;
+}
+
+/* SEJARAH */
+.sejarah {
+    background: white;
+}
+
+.sejarah-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    align-items: center;
+}
+
+.sejarah img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.sejarah h3 {
+    color: #102c57;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+/* PROFIL */
+.profil {
+    background: #edf2f8;
+}
+
+.kartu-container {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.kartu {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 15px #0001;
+}
+
+.kartu h3 {
+    color: #102c57;
+    margin-bottom: 10px;
+}
+
+.icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+/* JURUSAN */
+.jurusan {
+    background: white;
+}
+
+.jurusan-container {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+}
+
+.jurusan-card {
+    background: #edf2f8;
+    padding: 25px;
+    border-left: 5px solid #ffc845;
+    border-radius: 12px;
+}
+
+.jurusan-card h3 {
+    color: #102c57;
+    margin-bottom: 10px;
+}
+
+/* JARGON */
+.jargon {
+    background: linear-gradient(135deg,#102c57,#1b568e);
+    color: white;
+    text-align: center;
+}
+
+.jargon h2 {
+    font-size: 32px;
+}
+
+.jargon-besar {
+    color: #ffc845;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 25px 0;
+    line-height: 1.5;
+}
+
+.jargon-box {
+    display: inline-block;
+    border: 1px solid white;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+/* KONTAK */
+.kontak {
+    background: #edf2f8;
+    text-align: center;
+}
+
+.kontak-box {
+    background: white;
+    max-width: 650px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.kontak-box p {
+    margin: 10px;
+}
+
+/* FOOTER */
+footer {
+    background: #091d3b;
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+footer span {
+    color: #ffc845;
+    font-weight: bold;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    nav a {
+        margin: 0;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .sejarah-content,
+    .kartu-container,
+    .jurusan-container {
+        grid-template-columns: 1fr;
+    }
+
+    .jargon-besar {
+        font-size: 28px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGASI -->
+<header>
+    <div class="logo">SMKN 2 <span>MADIUN</span></div>
+
+    <nav>
+        <a href="#beranda">Beranda</a>
+        <a href="#sejarah">Sejarah</a>
+        <a href="#profil">Profil</a>
+        <a href="#jurusan">Jurusan</a>
+        <a href="#jargon">Jargon</a>
+        <a href="#kontak">Kontak</a>
+    </nav>
+</header>
+
+<!-- BERANDA -->
+<section class="hero" id="beranda">
+    <div>
+        <h1>SELAMAT DATANG DI<br>
+        <span>SMK NEGERI 2 MADIUN</span></h1>
+
+        <p>
+            Mewujudkan generasi yang cerdas, berkarakter,
+            berprestasi, serta siap menghadapi tantangan
+            dunia kerja dan masa depan.
+        </p>
+
+        <a href="#sejarah" class="tombol">Kenali Sekolah Kami</a>
+    </div>
+</section>
+
+<!-- SEJARAH -->
+<section class="sejarah" id="sejarah">
+    <div class="judul">
+        <h2>Latar Belakang Sekolah</h2>
+        <div class="garis"></div>
+        <p>Mengenal sejarah SMK Negeri 2 Madiun</p>
+    </div>
+
+    <div class="sejarah-content">
+        <img src="https://images.unsplash.com/photo-1562774053-701939374585?w=1000"
+             alt="Gedung sekolah">
+
+        <div>
+            <h3>Sejarah SMK Negeri 2 Madiun</h3>
+
+            <p>
+                SMK Negeri 2 Madiun merupakan salah satu
+                sekolah menengah kejuruan negeri yang berada
+                di Kota Madiun, Jawa Timur.
+            </p>
+
+            <p>
+                Cikal bakal sekolah ini bermula pada tahun
+                1962 dengan nama SMEA Persiapan Negeri Madiun.
+                Berdasarkan Surat Keputusan Departemen
+                Pendidikan dan Kebudayaan Nomor 834/P/3/Kej
+                tanggal 28 Agustus 1963, sekolah ini ditetapkan
+                menjadi SMEA Negeri Madiun dan resmi berdiri
+                sejak 1 Agustus 1963.
+            </p>
+
+            <p>
+                Seiring perkembangan zaman, sekolah terus
+                meningkatkan kualitas pendidikan, fasilitas,
+                dan kompetensi peserta didik agar mampu
+                mengikuti perkembangan teknologi dan
+                kebutuhan dunia kerja.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- PROFIL -->
+<section class="profil" id="profil">
+    <div class="judul">
+        <h2>Profil Sekolah</h2>
+        <div class="garis"></div>
+        <p>Membangun generasi unggul dan berkualitas</p>
+    </div>
+
+    <div class="kartu-container">
+
+        <div class="kartu">
+            <div class="icon">🎓</div>
+            <h3>Pendidikan Berkualitas</h3>
+            <p>
+                Memberikan pendidikan yang berkualitas
+                untuk mengembangkan potensi peserta didik.
+            </p>
+        </div>
+
+        <div class="kartu">
+            <div class="icon">🤝</div>
+            <h3>Pembentukan Karakter</h3>
+            <p>
+                Membentuk siswa yang disiplin, jujur,
+                bertanggung jawab, dan berakhlak baik.
+            </p>
+        </div>
+
+        <div class="kartu">
+            <div class="icon">🏆</div>
+            <h3>Prestasi</h3>
+            <p>
+                Mendorong siswa untuk mengembangkan
+                keterampilan dan meraih prestasi.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- JURUSAN -->
+<section class="jurusan" id="jurusan">
+    <div class="judul">
+        <h2>Program Keahlian</h2>
+        <div class="garis"></div>
+        <p>Bidang keahlian di SMK Negeri 2 Madiun</p>
+    </div>
+
+    <div class="jurusan-container">
+
+        <div class="jurusan-card">
+            <h3>01. Akuntansi dan Keuangan Lembaga</h3>
+            <p>
+                Mempelajari pencatatan transaksi,
+                pengelolaan keuangan, laporan keuangan,
+                perpajakan, dan aplikasi akuntansi.
+            </p>
+        </div>
+
+        <div class="jurusan-card">
+            <h3>02. Manajemen Perkantoran dan Layanan Bisnis</h3>
+            <p>
+                Mempelajari administrasi perkantoran,
+                pengelolaan dokumen, komunikasi bisnis,
+                dan pelayanan pelanggan.
+            </p>
+        </div>
+
+        <div class="jurusan-card">
+            <h3>03. Pemasaran / Bisnis Digital</h3>
+            <p>
+                Mempelajari strategi pemasaran,
+                promosi digital, media sosial,
+                marketplace, dan kewirausahaan.
+            </p>
+        </div>
+
+        <div class="jurusan-card">
+            <h3>04. Desain Komunikasi Visual</h3>
+            <p>
+                Mempelajari desain grafis, ilustrasi,
+                fotografi, videografi, dan pembuatan
+                karya visual kreatif.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- JARGON -->
+<section class="jargon" id="jargon">
+    <h2>Jargon Kebanggaan Sekolah</h2>
+
+    <p>
+        Menjadi semangat bagi seluruh warga sekolah
+        untuk terus berkembang dan meraih masa depan.
+    </p>
+
+    <div class="jargon-besar">
+        CERDAS,<br>
+        BERKARAKTER,<br>
+        BERPRESTASI
+    </div>
+
+    <div class="jargon-box">
+        <h3>CERDAS</h3>
+        <p>Berpikir kritis dan kreatif.</p>
+    </div>
+
+    <div class="jargon-box">
+        <h3>BERKARAKTER</h3>
+        <p>Memiliki sikap dan moral yang baik.</p>
+    </div>
+
+    <div class="jargon-box">
+        <h3>BERPRESTASI</h3>
+        <p>Berusaha meraih keberhasilan.</p>
+    </div>
+</section>
+
+<!-- KONTAK -->
+<section class="kontak" id="kontak">
+    <div class="judul">
+        <h2>Informasi Sekolah</h2>
+        <div class="garis"></div>
+        <p>SMK Negeri 2 Madiun</p>
+    </div>
+
+    <div class="kontak-box">
+        <h3>SMK NEGERI 2 MADIUN</h3>
+
+        <p>📍 Jl. Letjen Haryono No. 18,
+        Mojorejo, Taman, Kota Madiun,
+        Jawa Timur 63139</p>
+
+        <p>📞 0351-464407</p>
+
+        <p>🌐
+        <a href="https://smkn2madiun.sch.id/" target="_blank">
+        Website Resmi Sekolah</a></p>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>&copy; 2026 Profil SMK Negeri 2 Madiun</p>
+    <p><span>CERDAS, BERKARAKTER, BERPRESTASI</span></p>
+</footer>
+
+</body>
+</html>
